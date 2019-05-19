@@ -189,6 +189,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+exec_always "setxkbmap -layout fi"
+
 exec google-chrome
 exec code
 exec spotify

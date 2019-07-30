@@ -2,12 +2,9 @@
 
 set -euo pipefail
 
-BAT=$(cat /sys/class/power_supply/BAT0/capacity)
+BAT0=$(cat /sys/class/power_supply/BAT0/capacity)
+BAT1=$(cat /sys/class/power_supply/BAT1/capacity)
 
-echo "BAT $BAT"
-
-# Set urgent flag below 5% or use orange below 20%
-[ ${BAT%?} -le 5 ] && exit 33
-[ ${BAT%?} -le 20 ] && echo "#FF8000"
+echo "BAT $BAT0 $BAT1"
 
 exit 0

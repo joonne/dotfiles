@@ -223,8 +223,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 input * {
-    xkb_layout "fi"
-    xkb_variant "colemak,,typewriter"
+    xkb_layout "us,fi"
+    xkb_variant "colemak_dh"
     xkb_options "grp:win_space_toggle"
 }
 

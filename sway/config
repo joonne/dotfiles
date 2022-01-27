@@ -205,7 +205,7 @@ bar {
 }
 
 # Lock screen
-bindsym $mod+shift+x exec swaylock -i ~/Pictures/linux.png -d -e
+bindsym $mod+shift+x exec swaylock -i ~/Pictures/archlinux.png -d -e
 
 # Volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
@@ -239,12 +239,18 @@ exec wl-paste -t text --watch clipman store
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako
 
+# Clamshell Mode
+# https://github.com/swaywm/sway/wiki#clamshell-mode
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
 # Idle
 exec swayidle -w \
-    timeout 1800 'swaylock -i ~/Pictures/linux.png -d -e' \
+    timeout 1800 'swaylock -i ~/Pictures/archlinux.png -d -e' \
     timeout 1805 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'playerctl pause' \
     before-sleep 'swaylock'
 
-output "*" bg ~/Pictures/linux.png fill
+output "*" bg ~/Pictures/archlinux.png fill

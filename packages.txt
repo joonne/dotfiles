@@ -3,7 +3,6 @@ alacritty
 alsa-utils
 autoconf
 automake
-autorandr
 base
 binutils
 bison
@@ -13,6 +12,7 @@ ckb-next
 clipman
 code
 dialog
+discord
 dmenu
 dmidecode
 docker
@@ -80,6 +80,7 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python-pip
+reflector
 remmina
 slack-desktop
 slurp
@@ -94,6 +95,7 @@ texinfo
 thunar
 thunar-dropbox
 thunar-volman
+tmux
 ttf-fira-code
 ttf-font-awesome
 vim

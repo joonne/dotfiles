@@ -1,0 +1,15 @@
+[user]
+	email = jonne.pihlanen@futurice.com
+	name = Jonne Pihlanen
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	conflictstyle = "diff3"
+[core]
+	editor = "nvim"
+[init]
+	defaultBranch = "main"
+[rebase]
+	autoStash = true

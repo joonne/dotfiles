@@ -12,3 +12,7 @@ mkdir -p $config
 
 ln -s "$(pwd)/fish/config.fish" "$config/config.fish"
 
+# https://github.com/jorgebucaran/fisher
+# fisher install edc/bass
+# fisher install jorgebucaran/nvm.fish
+

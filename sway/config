@@ -47,7 +47,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,6 +115,8 @@ set $workspace3 "3: Messages "
 # set $workspace4 "4: Email "
 set $workspace4 "4: Virtualization "
 set $workspace5 "5: Terminals "
+set $workspace6 "6: Passwords "
+set $workspace8 "8: Messages "
 set $workspace10 "10: Music "
 
 # switch to workspace
@@ -236,7 +238,8 @@ exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
 
 exec wl-paste -t text --watch clipman store
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec mako
 
 # Clamshell Mode

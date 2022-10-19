@@ -4,3 +4,4 @@ set -g fish_greeting
 set -x TERMINAL alacritty
 set -x XDG_CURRENT_DESKTOP sway
 
+fish_add_path ~/Applications/stb/bin/

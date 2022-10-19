@@ -1,5 +1,6 @@
 {
-	"autoload": {
-		"foostan Corne": "corne.json"
-	}	
+    "autoload": {
+        "foostan Corne": "corne.json"
+    },
+    "version": "1.4.2"
 }

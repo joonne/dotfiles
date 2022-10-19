@@ -1,6 +1,8 @@
 {
-  "mapping": {
-    "Alt_L+o": "ö",
-    "Alt_R+a": "ä"
-  }
+    "mapping": {
+        "h(Alt_L)+KEY_O": ["o"],
+        "h(Alt_R)+KEY_A": ["a"],
+	"h(Alt_L)+KEY_E": ["KEY_EURO"],
+	"h(a)+h(r)": "u"
+    }
 }

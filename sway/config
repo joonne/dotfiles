@@ -176,10 +176,10 @@ bar {
 # lock screen
 bindsym $mod+shift+x exec swaylock -i ~/Pictures/archlinux.png -d -e
 
-# volume controls
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+# pipewire-pulse
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% && pkill -RTMIN+1 i3blocks
 
 # screen brightness controls
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -199,7 +199,6 @@ input * {
 }
 
 # autostart
-exec --no-startup-id nm-applet --indicator
 exec --no-startup-id chromium
 exec --no-startup-id spotify
 exec --no-startup-id slack

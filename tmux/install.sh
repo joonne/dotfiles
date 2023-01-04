@@ -6,5 +6,9 @@ config="$HOME"
 
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-rm $config/.tmux.conf
+if [ -e "$config/.tmux.conf" ]; then
+  rm $config/.tmux.conf
+fi
+
+
 ln -s "$(pwd)/tmux/tmux.conf" "$config/.tmux.conf"

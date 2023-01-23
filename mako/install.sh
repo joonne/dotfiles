@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#
+# makoctl mode -a dnd
+# makoctl mode -r dnd
+#
+
 set -euo pipefail
 
 config="$HOME/.config/mako"

@@ -157,6 +157,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+gaps inner 10
 hide_edge_borders both
 
 # statusbar
@@ -205,6 +206,9 @@ exec --no-startup-id slack
 exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
 
+# screenshot
+bindsym Print exec grim -g "$(slurp)"
+
 # clipboard
 exec wl-paste -t text --watch clipman store
 
@@ -214,6 +218,8 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # notifications daemon
 exec mako
+
+# xwayland disable
 
 # clamshell Mode
 # https://github.com/swaywm/sway/wiki#clamshell-mode

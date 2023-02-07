@@ -1,5 +1,9 @@
 [[language]]
 name = "typescript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
-formatter = { command = "prettier", args = ["--write"] }
 
+[[language]]
+name = "tsx"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true

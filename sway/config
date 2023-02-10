@@ -34,8 +34,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec bemenu-run
+# launcher
+bindsym $mod+d exec kickoff
 
 # change focus
 bindsym $mod+j focus left
@@ -159,6 +159,7 @@ bindsym $mod+r mode "resize"
 
 gaps inner 10
 hide_edge_borders both
+default_border none
 
 # statusbar
 bar {
@@ -175,7 +176,8 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec swaylock -i ~/Pictures/archlinux.png -d -e
+set $background ~/Pictures/linux.png
+bindsym $mod+shift+x exec swaylock -i $background -d -e
 
 # pipewire-pulse
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
@@ -207,7 +209,7 @@ exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
 
 # screenshot
-bindsym Ctrl+Print exec grim -g "$(slurp)"
+bindsym $mod+Print exec grim -g "$(slurp)"
 
 # clipboard
 exec wl-paste -t text --watch clipman store
@@ -230,11 +232,11 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # idle
 exec swayidle -w \
-    timeout 1800 'swaylock -i ~/Pictures/archlinux.png -d -e' \
+    timeout 1800 'swaylock -i $background -d -e' \
     timeout 1805 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaylock i ~/Picture/archlinux.png -d -e'
+    before-sleep 'swaylock i $background -d -e'
 
 # background
-output "*" bg ~/Pictures/archlinux.png fill
+output "*" bg $background fill

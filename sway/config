@@ -176,8 +176,8 @@ bar {
 }
 
 # lock screen
-set $background ~/Pictures/linux.png
-bindsym $mod+shift+x exec swaylock -i $background -d -e
+set $background ~/Pictures/archlinux.png
+bindsym $mod+shift+x exec swaylock -e -i $background
 
 # pipewire-pulse
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -RTMIN+1 i3blocks
@@ -207,6 +207,7 @@ exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
+exec --no-startup-id thunar --daemon
 
 # screenshot
 bindsym $mod+Print exec grim -g "$(slurp)"
@@ -232,11 +233,11 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # idle
 exec swayidle -w \
-    timeout 1800 'swaylock -i $background -d -e' \
+    timeout 1800 'swaylock -f -e -i $(background)' \
     timeout 1805 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaylock i $background -d -e'
+    before-sleep 'swaylock -f -e -i $(background)'
 
 # background
 output "*" bg $background fill

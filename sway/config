@@ -233,11 +233,11 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # idle
 exec swayidle -w \
-    timeout 1800 'swaylock -f -e -i $(background)' \
+    timeout 1800 'swaylock -f -e -i $background' \
     timeout 1805 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaylock -f -e -i $(background)'
+    before-sleep 'swaylock -f -e -i $background'
 
 # background
 output "*" bg $background fill

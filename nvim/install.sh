@@ -10,4 +10,7 @@ fi
 
 mkdir -p "$config"
 
-ln -s "$(pwd)/nvim/init.lua" "$config/init.lua"
+ln -s "$(pwd)/nvim/init.lua" "$config/init.lua" 
+ln -s "$(pwd)/nvim/lua" "$config/lua"
+ln -s "$(pwd)/nvim/after" "$config/after"
+

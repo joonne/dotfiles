@@ -204,7 +204,7 @@ input * {
 exec --no-startup-id chromium
 exec --no-startup-id spotify
 exec --no-startup-id slack
-# exec --no-startup-id dropbox start
+exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
 exec --no-startup-id thunar --daemon
 exec --no-startup-id keepassxc

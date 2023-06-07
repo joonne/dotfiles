@@ -13,3 +13,10 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- buffers
 vim.keymap.set("n", "<leader>bc", vim.cmd.bd)
+vim.keymap.set("n", "<TAB>", vim.cmd.bnext)
+vim.keymap.set("n", "<S-TAB>", vim.cmd.bprevious)
+
+-- lsp remaps
+vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover)
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+

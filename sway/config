@@ -35,7 +35,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # launcher
-bindsym $mod+d exec kickoff
+bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left

@@ -43,4 +43,5 @@ return require('packer').startup(function(use)
   }
   use 'github/copilot.vim'
   use 'airblade/vim-gitgutter'
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 end)

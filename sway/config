@@ -241,3 +241,6 @@ exec swayidle -w \
 
 # background
 output "*" bg $background fill
+
+bindsym alt+a exec wlrctl keyboard type 'ä'
+bindsym alt+o exec wlrctl keyboard type 'ö'

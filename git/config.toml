@@ -1,5 +1,5 @@
 [user]
-	email = jonne.pihlanen@futurice.com
+	email = jonne.pihlanen@sleek.works
 	name = Jonne Pihlanen
 [pull]
 	rebase = true
@@ -13,3 +13,5 @@
 	defaultBranch = "main"
 [push]
 	autoSetupRemote = true
+[diff]
+	submodule = log

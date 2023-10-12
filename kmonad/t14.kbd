@@ -232,24 +232,44 @@
 
   -------------------------------------------------------------------------- |#
 
-(defalias
-  f_lsft (tap-next-release f lsft)
-  d_lmet (tap-next-release d lmet)
-  s_lalt (tap-next-release s lalt)
-  a_lctl (tap-next-release a lctl)
-
-  j_rsft (tap-next-release j rsft)
-  k_rmet (tap-next-release k rmet)
-  l_ralt (tap-next-release l ralt)
-  semi_rctl (tap-next-release ; rctl)
-)
-
 (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(defalias
+  t_lsft (tap-next-release t lsft)
+  s_lmet (tap-next-release s lmet)
+  r_lalt (tap-next-release r lalt)
+  a_lctl (tap-next-release a lctl)
+
+  n_rsft (tap-next-release n rsft)
+  e_rmet (tap-next-release e rmet)
+  i_ralt (tap-next-release i ralt)
+  o_rctl (tap-next-release o rctl)
+)
+
+(deflayer colemak-dh
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
+  caps @a_lctl    @r_lalt    @s_lmet    @t_lsft    g    m    @n_rsft    @e_rmet    @i_ralt    @o_rctl    '    ret
+  lsft x    c    d    v    z    k    h    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(defalias
+  f_lsft (tap-next-release f lsft)
+  d_lmet (tap-next-release d lmet)
+  s_lalt (tap-next-release s lalt)
+  ;; a_lctl (tap-next-release a lctl)
+
+  j_rsft (tap-next-release j rsft)
+  k_rmet (tap-next-release k rmet)
+  l_ralt (tap-next-release l ralt)
+  semi_rctl (tap-next-release ; rctl)
 )
 
 (deflayer base

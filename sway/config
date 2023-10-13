@@ -189,7 +189,7 @@ exec --no-startup-id thunar --daemon
 exec --no-startup-id keepassxc
 
 # screenshot
-bindsym $mod+Print exec grim -g "$(slurp)"
+bindsym $mod+Print exec grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -g "$(slurp)"
 
 # clipboard
 exec wl-paste -t text --watch clipman store

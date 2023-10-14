@@ -257,7 +257,7 @@
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
   caps @a_lctl    @r_lalt    @s_lmet    @t_lsft    g    m    @n_rsft    @e_rmet    @i_ralt    @o_rctl    '    ret
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
+  lctl lmet @num           spc            ralt rmet cmp  rctl
 )
 
 (defalias

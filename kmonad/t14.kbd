@@ -250,6 +250,8 @@
   e_rmet (tap-next-release e rmet)
   i_ralt (tap-next-release i ralt)
   o_rctl (tap-next-release o rctl)
+
+  mov  (layer-toggle movement)
 )
 
 (deflayer colemak-dh
@@ -257,7 +259,15 @@
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
   caps @a_lctl    @r_lalt    @s_lmet    @t_lsft    g    m    @n_rsft    @e_rmet    @i_ralt    @o_rctl    '    ret
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl lmet @num           spc            ralt rmet cmp  rctl
+  lctl @num @mov           spc            ralt rmet cmp  rctl
+)
+
+(deflayer movement
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ left down up right _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _
 )
 
 (defalias

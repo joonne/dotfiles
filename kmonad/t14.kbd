@@ -11,7 +11,7 @@
   fallthrough true
 
   ;; Set this to false to disable any command-execution in KMonad
-  allow-cmd true
+  allow-cmd false
 )
 
 (defsrc
@@ -19,7 +19,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
+  lctl lmet lalt           spc            ralt sys  rctl
 )
 
 (defalias
@@ -41,7 +41,7 @@
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
   caps @a_lctl    @r_lalt    @s_lmet    @t_lsft    g    m    @n_rsft    @e_rmet    @i_ralt    @o_rctl    '    ret
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl @num @mov           spc            ralt rmet cmp  rctl
+  lctl @num @mov           spc            ret sys rctl
 )
 
 (deflayer movement

@@ -48,8 +48,9 @@
   switch (layer-toggle layouts)
   qwe (layer-switch base)
   col (layer-switch colemak-dh)
-  mov  (layer-toggle movement)
-  num  (layer-toggle numbers)
+  mov (layer-toggle movement)
+  num (layer-toggle numbers)
+  sym (layer-toggle symbols)
 )
 
 (deflayer base
@@ -57,7 +58,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps @a_lctl @s_lalt @d_lmet @f_lsft g h @j_rsft @k_rmet @l_ralt @semi_rctl '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl @num @mov           spc            ralt sys  @switch
+  @sym @num @mov           spc            ret  esc  @switch
 )
 
 (deflayer colemak-dh
@@ -65,15 +66,24 @@
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
   caps @a_lctl @r_lalt @s_lmet @t_lsft g m @n_rsft @e_rmet @i_ralt @o_rctl ' _
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl @num @mov           spc            ret  sys  @switch
+  @sym @num @mov           spc            ret  esc  @switch
 )
 
 (deflayer movement
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _ _ _ _ _ _ left down up right _ _ _
-  _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _ bspc _ _ _
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     left  down  up    right _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _         bspc                      _     _     _
+)
+
+(defalias arr (around = >))
+(deflayer symbols
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     =     &     *     \(    \)    _     _     _
+  _     _     _     _     _     _     @arr  $     %     ^     \     _     _
+  _     _     _     _     _     _     +     !     @     #     _     _
+  _     _     _         bspc                      _     sys   _
 )
 
 (deflayer numbers

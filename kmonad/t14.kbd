@@ -23,6 +23,7 @@
 )
 
 (defalias
+  ;; colemak-dh homerow mods
   t_lsft (tap-next-release t lsft)
   s_lmet (tap-next-release s lmet)
   r_lalt (tap-next-release r lalt)
@@ -33,26 +34,7 @@
   i_ralt (tap-next-release i ralt)
   o_rctl (tap-next-release o rctl)
 
-  mov  (layer-toggle movement)
-)
-
-(deflayer colemak-dh
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
-  caps @a_lctl    @r_lalt    @s_lmet    @t_lsft    g    m    @n_rsft    @e_rmet    @i_ralt    @o_rctl    '    ret
-  lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  lctl @num @mov           spc            ret sys rctl
-)
-
-(deflayer movement
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _ _ _ _ left down up right _ _ _
-  _ _ _ _ _ _ _ _ _ _ _ _
-  _ _ _ bspc _ _ _ _
-)
-
-(defalias
+  ;; qwerty homerow mods
   f_lsft (tap-next-release f lsft)
   d_lmet (tap-next-release d lmet)
   s_lalt (tap-next-release s lalt)
@@ -62,25 +44,51 @@
   k_rmet (tap-next-release k rmet)
   l_ralt (tap-next-release l ralt)
   semi_rctl (tap-next-release ; rctl)
+
+  switch (layer-toggle layouts)
+  qwe (layer-switch base)
+  col (layer-switch colemak-dh)
+  mov  (layer-toggle movement)
+  num  (layer-toggle numbers)
 )
 
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps @a_lctl    @s_lalt    @d_lmet    @f_lsft    g    h    @j_rsft    @k_rmet    @l_ralt    @semi_rctl    '    ret
+  caps @a_lctl @s_lalt @d_lmet @f_lsft g h @j_rsft @k_rmet @l_ralt @semi_rctl '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
+  lctl @num @mov           spc            ralt sys  @switch
 )
 
-(defalias
-  num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
+(deflayer colemak-dh
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
+  caps @a_lctl @r_lalt @s_lmet @t_lsft g m @n_rsft @e_rmet @i_ralt @o_rctl ' _
+  lsft x    c    d    v    z    k    h    ,    .    /    rsft
+  lctl @num @mov           spc            ret  sys  @switch
+)
+
+(deflayer movement
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _ _ _ _ _ _ left down up right _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ bspc _ _ _
 )
 
 (deflayer numbers
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    XX   /    7    8    9    -    _    _    _
-  _    _    _    _    _    XX   *    4    5    6    +    _    _
-  _    _    \(   \)   .    XX   0    1    2    3    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    XX   _    7    8    9    _    _    _    _
+  _    _    _    _    _    XX   _    4    5    6    0    _    _
+  _    _    _    _    _    XX   _    1    2    3    _    _
+  _    _    _              bspc           _    _    _ 
+)
+
+(deflayer layouts
+  _    @qwe @col _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _  
+  _    _    _              _              _    _    _
 )
 

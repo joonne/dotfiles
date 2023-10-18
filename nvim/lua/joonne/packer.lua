@@ -1,10 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -46,4 +42,6 @@ return require('packer').startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   use 'mfussenegger/nvim-dap'
   use 'elentok/format-on-save.nvim'
+  use 'kylechui/nvim-surround'
+  use 'm4xshen/autoclose.nvim'
 end)

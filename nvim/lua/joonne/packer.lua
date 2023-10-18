@@ -45,4 +45,5 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   use 'mfussenegger/nvim-dap'
+  use 'elentok/format-on-save.nvim'
 end)

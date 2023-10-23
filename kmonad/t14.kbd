@@ -56,17 +56,17 @@
 )
 
 (deflayer base
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    XX
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps @a_lctl @s_lalt @d_lmet @f_lsft g h @j_rsft @k_rmet @l_ralt @semi_rctl '    ret
+  caps @a_lctl @s_lalt @d_lmet @f_lsft g h @j_rsft @k_rmet @l_ralt @semi_rctl '    XX
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   @sym @num @mov           spc            @ret_med  esc  @switch
 )
 
 (deflayer colemak-dh
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    XX
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
-  caps @a_lctl @r_lalt @s_lmet @t_lsft g m @n_rsft @e_rmet @i_ralt @o_rctl ' _
+  caps @a_lctl @r_lalt @s_lmet @t_lsft g m @n_rsft @e_rmet @i_ralt @o_rctl ' XX
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
   @sym @num @mov           spc            @ret_med  esc  @switch
 )
@@ -93,13 +93,13 @@
   _     _     _     _     _     XX    _     7     8     9     _     _     _     _
   _     _     _     _     _     XX    _     4     5     6     0     _     _
   _     _     _     _     _     XX    _     1     2     3     _     _
-  _     _     _               bspc                _     _     _ 
+  _     _     _               bspc                _     _     _
 )
 
 (deflayer media
   _     _     _     _     _     _     _     _     _     _     _     _     _     _
   _     _     _     _     _     _     _     _     _     _     _     _     _     _
-  _     _     _     _     _     _     _     vold  volu  _     _     _     _
+  _     _     _     _     _     _     prev  vold  volu  next  pp    _     _
   _     _     _     _     _     _     _     _     _     _     _     _
   _     _     _         bspc                      _     _     _
 )
@@ -108,7 +108,6 @@
   _    @qwe @col _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _  
+  _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _
 )
-

@@ -4,6 +4,9 @@ local formatters = require("format-on-save.formatters")
 -- npm install -g eslint_d @fsouza/prettierd
 
 format_on_save.setup({
+  experiments = {
+    partial_update = 'diff', -- or 'line-by-line'
+  },
   exclude_path_patterns = {
     "/node_modules/",
   },

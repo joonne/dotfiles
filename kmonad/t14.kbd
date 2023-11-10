@@ -53,6 +53,7 @@
   sym (layer-toggle symbols)
 
   ret_med (tap-next-release ret (layer-toggle media))
+  tab_mov (tap-next-release tab (layer-toggle movement))
 )
 
 (deflayer base
@@ -60,7 +61,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps @a_lctl @s_lalt @d_lmet @f_lsft g h @j_rsft @k_rmet @l_ralt @semi_rctl '    XX
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @sym @num @mov           spc            @ret_med  esc  @switch
+  @sym @num @tab_mov       spc            @ret_med  esc  @switch
 )
 
 (deflayer colemak-dh
@@ -68,7 +69,7 @@
   tab  q    w    f    p    b    j    l    u    y    ;    [    ]    \
   caps @a_lctl @r_lalt @s_lmet @t_lsft g m @n_rsft @e_rmet @i_ralt @o_rctl ' XX
   lsft x    c    d    v    z    k    h    ,    .    /    rsft
-  @sym @num @mov           spc            @ret_med  esc  @switch
+  @sym @num @tab_mov       spc            @ret_med  esc  @switch
 )
 
 (deflayer movement

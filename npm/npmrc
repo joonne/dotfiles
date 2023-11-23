@@ -1,0 +1,1 @@
+npm set prefix="$HOME/.local"

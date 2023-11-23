@@ -13,5 +13,10 @@
 	defaultBranch = "main"
 [push]
 	autoSetupRemote = true
+    recurseSubmodules = "check"
 [diff]
-	submodule = log
+	submodule = "log"
+[status]
+    submodulesummary = true
+[submodule]
+    recurse = true

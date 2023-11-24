@@ -44,4 +44,5 @@ return require('packer').startup(function(use)
   use 'elentok/format-on-save.nvim'
   use 'kylechui/nvim-surround'
   use 'm4xshen/autoclose.nvim'
-end)
+  use 'terrortylor/nvim-comment'
+    end)

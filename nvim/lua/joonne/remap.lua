@@ -1,3 +1,8 @@
+-- :nmap for normal mode mappings
+-- :vmap for visual mode mappings
+-- :imap for insert mode mappings
+-- :help map
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "U", vim.cmd.redo)
@@ -16,7 +21,14 @@ vim.keymap.set("n", "<leader>bc", vim.cmd.bd)
 vim.keymap.set("n", "<TAB>", vim.cmd.bnext)
 vim.keymap.set("n", "<S-TAB>", vim.cmd.bprevious)
 
--- lsp remaps
+-- lsp
 vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+
+-- copilot
+vim.keymap.set("i", "<leader><TAB>", 'copilot#Accept("<CR>")', {
+    expr = true,
+    replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
 

@@ -39,7 +39,11 @@ return require('packer').startup(function(use)
     }
     use 'github/copilot.vim'
     use 'airblade/vim-gitgutter'
-    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
     use 'mfussenegger/nvim-dap'
     use 'elentok/format-on-save.nvim'
     use 'kylechui/nvim-surround'
@@ -47,4 +51,12 @@ return require('packer').startup(function(use)
     use 'terrortylor/nvim-comment'
     use 'stevearc/vim-arduino'
     use 'joeveiga/ng.nvim'
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
+    use 'lewis6991/gitsigns.nvim'
 end)

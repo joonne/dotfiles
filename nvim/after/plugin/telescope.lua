@@ -10,3 +10,5 @@ vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions)
 vim.keymap.set('n', '<leader>gr', builtin.lsp_references)
 vim.keymap.set('n', '<leader>ss', builtin.git_status)
 vim.keymap.set('n', '<leader>cs', builtin.git_commits)
+
+require("telescope").load_extension("flutter")

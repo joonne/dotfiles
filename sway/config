@@ -70,15 +70,15 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Editor "
-set $workspace2 "2: Browser "
-set $workspace3 "3: Messages "
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
 # set $workspace4 "4: Email "
-set $workspace4 "4: Virtualization "
-set $workspace5 "5: Terminals "
-set $workspace6 "6: Passwords "
-set $workspace8 "8: Messages "
-set $workspace10 "10: Music "
+set $workspace4 "4: "
+set $workspace5 "5: "
+set $workspace6 "6: "
+set $workspace8 "8: "
+set $workspace10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -105,34 +105,27 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 for_window [app_id="chromium"] move to workspace $workspace2
-for_window [class="Slack"]     move to workspace $workspace3
+for_window [class="Slack"] move to workspace $workspace3
+for_window [class="Microsoft Teams - Preview"] move to workspace $workspace3
 for_window [class="KeePassXC"] move to workspace $workspace6
 for_window [app_id="org.telegram.desktop"] move to workspace $workspace8
 for_window [class="Spotify"] move to workspace $workspace10
+for_window [title="^Android Emulator*"] floating enable
 
 # Reload the configuration file
 # swaymsg reload
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -203,6 +196,7 @@ exec mako
 
 # pipedream
 # xwayland disable
+for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 # clamshell Mode
 # https://github.com/swaywm/sway/wiki#clamshell-mode

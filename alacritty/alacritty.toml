@@ -1,0 +1,6 @@
+live_config_reload = true
+
+[font]
+normal = { family = "FiraCode", style = "Regular" }
+italic = { family = "FiraCode", style = "Regular" }
+offset = { x = 0, y = 2 }

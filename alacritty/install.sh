@@ -10,5 +10,5 @@ fi
 
 mkdir -p "$config"
 
-ln -s "$(pwd)/alacritty/alacritty.yml" "$config/alacritty.yml"
+ln -s "$(pwd)/alacritty/alacritty.toml" "$config/alacritty.toml"
 

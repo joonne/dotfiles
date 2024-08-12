@@ -59,4 +59,16 @@ return require('packer').startup(function(use)
         },
     }
     use 'lewis6991/gitsigns.nvim'
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
+    use {
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+        },
+    }
 end)

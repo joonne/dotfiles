@@ -24,8 +24,8 @@ cmd-shift-up = 'move up'
 cmd-shift-right = 'move right'
 
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-cmd-h = 'split horizontal'
-cmd-v = 'split vertical'
+cmd-shift-h = 'split horizontal'
+cmd-shift-v = 'split vertical'
 
 cmd-f = 'fullscreen'
 
@@ -65,7 +65,7 @@ cmd-shift-8 = 'move-node-to-workspace 8'
 cmd-shift-9 = 'move-node-to-workspace 9'
 cmd-shift-0 = 'move-node-to-workspace 10'
 
-cmd-r = 'mode resize'
+cmd-shift-r = 'mode resize'
 
 [mode.resize.binding]
 left = 'resize width -50'

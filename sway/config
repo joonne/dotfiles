@@ -167,7 +167,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # keymaps
 input * {
-    xkb_layout "us,fi"
+    xkb_layout "us,us,fi"
     xkb_variant "colemak_dh"
     xkb_options "grp:win_space_toggle"
 }
@@ -176,13 +176,15 @@ input * {
 exec --no-startup-id chromium
 exec --no-startup-id spotify
 exec --no-startup-id slack
+exec --no-startup-id teams
 exec --no-startup-id dropbox start
 exec --no-startup-id telegram-desktop
 exec --no-startup-id thunar --daemon
 exec --no-startup-id keepassxc
+exec --no-startup-id nm-applet
 
 # screenshot
-bindsym $mod+Print exec grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png') -g "$(slurp)"
+bindsym $mod+Print exec grim $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png') -g "$(slurp)"
 
 # clipboard
 exec wl-paste -t text --watch clipman store

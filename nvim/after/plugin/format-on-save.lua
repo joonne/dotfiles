@@ -14,7 +14,6 @@ format_on_save.setup({
     css = formatters.lsp,
     html = formatters.lsp,
     javascript = formatters.lsp,
-    json = formatters.lsp,
     lua = formatters.lsp,
     markdown = formatters.prettierd,
     scss = formatters.lsp,
@@ -23,9 +22,11 @@ format_on_save.setup({
     typescript = formatters.prettierd,
     typescriptreact = formatters.prettierd,
     yaml = formatters.lsp,
+    toml = formatters.lsp,
     dart = formatters.lsp,
     cpp = formatters.lsp,
     h = formatters.lsp,
+    kt = formatters.lsp,
 
     javascript = {
       formatters.if_file_exists({
@@ -47,12 +48,18 @@ format_on_save.setup({
         formatter = formatters.prettierd,
       }),
     },
+    json = {
+      formatters.if_file_exists({
+        pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
+        formatter = formatters.prettierd,
+      }),
+    },
   },
 
   fallback_formatter = {
     formatters.remove_trailing_whitespace,
     formatters.remove_trailing_newlines,
-    formatters.prettierd,
+    -- formatters.prettierd,
   },
 
   -- By default, all shell commands are prefixed with "sh -c" (see PR #3)

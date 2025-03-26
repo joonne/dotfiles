@@ -1,0 +1,5 @@
+### Automatically switch to newly-connected devices
+load-module module-switch-on-connect
+
+### Automatic profile switching
+load-module module-bluetooth-policy auto_switch=2

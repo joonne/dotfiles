@@ -1,0 +1,1 @@
+set -x GHCUP_USE_XDG_DIRS

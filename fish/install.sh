@@ -11,6 +11,7 @@ fi
 mkdir -p $config
 
 ln -s "$(pwd)/fish/config.fish" "$config/config.fish"
+ln -s "$(pwd)/fish/config" "$config/config"
 
 # https://github.com/jorgebucaran/fisher
 # fisher install edc/bass

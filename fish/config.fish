@@ -4,6 +4,11 @@ set -g fish_greeting
 set -x TERMINAL alacritty
 set -x XDG_CURRENT_DESKTOP sway
 
-fish_add_path ~/SailfishOS/bin
-fish_add_path ~/.local/bin
-fish_add_path ~/.bun/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.bun/bin
+
+thefuck --alias | source
+
+for file in $HOME/.config/fish/config/*
+    source $file
+end

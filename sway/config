@@ -167,8 +167,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # keymaps
 input * {
-    xkb_layout "us,us,fi"
-    xkb_variant "colemak_dh"
+    xkb_layout "us,fi"
+    xkb_variant ""
     xkb_options "grp:win_space_toggle"
 }
 

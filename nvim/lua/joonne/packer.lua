@@ -51,24 +51,5 @@ return require('packer').startup(function(use)
     use 'terrortylor/nvim-comment'
     use 'stevearc/vim-arduino'
     use 'joeveiga/ng.nvim'
-    use {
-        'akinsho/flutter-tools.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- optional for vim.ui.select
-        },
-    }
     use 'lewis6991/gitsigns.nvim'
-    use {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        requires = { {"nvim-lua/plenary.nvim"} }
-    }
-    use {
-        'nvim-telescope/telescope-file-browser.nvim',
-        requires = {
-            'nvim-telescope/telescope.nvim',
-            'nvim-lua/plenary.nvim',
-        },
-    }
 end)

@@ -52,4 +52,24 @@ return require('packer').startup(function(use)
     use 'stevearc/vim-arduino'
     use 'joeveiga/ng.nvim'
     use 'lewis6991/gitsigns.nvim'
+    use({
+        "olimorris/codecompanion.nvim",
+        config = function()
+            require("codecompanion").setup()
+        end,
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        }
+    })
+    use({
+        "ravitemer/mcphub.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        build = "npm install -g mcp-hub@latest",
+        config = function()
+            require("mcphub").setup()
+        end
+    })
 end)

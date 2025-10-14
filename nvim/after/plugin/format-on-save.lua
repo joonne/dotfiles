@@ -17,6 +17,7 @@ format_on_save.setup({
         markdown = formatters.prettierd,
         scss = formatters.lsp,
         sh = formatters.shfmt,
+        fish = formatters.fish_lsp,
         terraform = formatters.lsp,
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
@@ -24,7 +25,15 @@ format_on_save.setup({
         dart = formatters.lsp,
         cpp = formatters.lsp,
         h = formatters.lsp,
+        hurl = formatters.lsp,
+        xml = formatters.lsp,
 
+        json = {
+            formatters.if_file_exists({
+                pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
+                formatter = formatters.prettierd,
+            }),
+        },
         javascript = {
             formatters.if_file_exists({
                 pattern = ".eslintrc.*",

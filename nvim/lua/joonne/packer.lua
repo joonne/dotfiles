@@ -6,6 +6,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+    use("nvim-lua/plenary.nvim")
 
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } })
 
@@ -33,6 +34,11 @@ return require("packer").startup(function(use)
 	use("stevearc/vim-arduino")
 	use("joeveiga/ng.nvim")
 	use("lewis6991/gitsigns.nvim")
+        use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 	use({
 		"olimorris/codecompanion.nvim",
 		config = function()

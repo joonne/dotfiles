@@ -6,9 +6,13 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-    use("nvim-lua/plenary.nvim")
+	use("nvim-lua/plenary.nvim")
 
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.4", requires = { { "nvim-lua/plenary.nvim" } } })
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.4",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
 	use({
 		"rose-pine/neovim",
@@ -34,20 +38,10 @@ return require("packer").startup(function(use)
 	use("stevearc/vim-arduino")
 	use("joeveiga/ng.nvim")
 	use("lewis6991/gitsigns.nvim")
-        use {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        requires = { {"nvim-lua/plenary.nvim"} }
-    }
 	use({
-		"olimorris/codecompanion.nvim",
-		config = function()
-			require("codecompanion").setup()
-		end,
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({
 		"ravitemer/mcphub.nvim",
@@ -55,9 +49,14 @@ return require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 		build = "npm install -g mcp-hub@latest",
-		config = function()
-			require("mcphub").setup()
-		end,
+	})
+	use({
+		"olimorris/codecompanion.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"ravitemer/mcphub.nvim",
+		},
 	})
 	use("stevearc/conform.nvim")
 end)

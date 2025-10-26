@@ -1,0 +1,11 @@
+directory: /mnt/music
+
+import:
+  copy: yes
+
+replace:
+  '\s': '_'
+
+plugins:
+  - musicbrainz
+  - scrub

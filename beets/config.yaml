@@ -9,9 +9,4 @@ replace:
 plugins:
   - musicbrainz
   - scrub
-  - lyrics
 
-lyrics:
-  auto: yes
-  sources:
-    - genius

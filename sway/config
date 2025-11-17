@@ -17,24 +17,12 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run -fn 'FiraCode-8'
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -61,10 +49,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 set $workspace1 "1: "
 set $workspace2 "2: "
@@ -137,6 +125,7 @@ default_border none
 # statusbar
 bar {
 	status_command SCRIPT_DIR=/home/joonne/code/projects/dotfiles/i3blocks-contrib i3blocks -c ~/.config/sway/i3blocks.conf
+    position bottom
 	colors {
 		statusline #ffffff
         background #323232
@@ -173,6 +162,7 @@ input * {
 # autostart
 exec --no-startup-id chromium
 exec --no-startup-id spotify
+exec --no-startup-id chromium --app=http://192.168.0.9:4533/app/#/
 exec --no-startup-id slack
 exec --no-startup-id dropbox start
 exec --no-startup-id Telegram

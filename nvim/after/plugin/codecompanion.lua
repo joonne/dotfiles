@@ -9,4 +9,11 @@ require("codecompanion").setup({
 			},
 		},
 	},
+	adapters = {
+		acp = {
+			claude_code = function()
+				return require("codecompanion.adapters").extend("claude_code", {})
+			end,
+		},
+	},
 })

@@ -13,3 +13,7 @@ if test -f $HOME/.config/fish/environment.fish
 else
     echo "Warning: environment variables not defined."
 end
+
+if type -q fzf
+    fzf --fish | source
+end

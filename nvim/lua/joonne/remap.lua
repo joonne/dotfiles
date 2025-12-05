@@ -10,11 +10,11 @@ vim.keymap.set("n", "U", vim.cmd.redo)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- buffers
 vim.keymap.set("n", "<leader>bc", vim.cmd.bd)
@@ -27,8 +27,10 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
 
 -- copilot
 vim.keymap.set("i", "<leader><TAB>", 'copilot#Accept("<CR>")', {
-    expr = true,
-    replace_keycodes = false
+	expr = true,
+	replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
 
+-- copy current file path into system clipboard
+vim.keymap.set("n", "<leader>l", ":let @+=expand('%')<CR>")

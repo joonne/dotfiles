@@ -27,14 +27,14 @@ cmp.setup({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require("lspconfig")["ts_ls"].setup({
+vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig")["lua_ls"].setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 })
 
-require("lspconfig")["qmlls"].setup({
+vim.lsp.config("qmlls", {
 	capabilities = capabilities,
 })

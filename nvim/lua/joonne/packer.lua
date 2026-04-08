@@ -1,66 +1,60 @@
-vim.cmd([[packadd packer.nvim]])
+local gh = function(x) return 'https://github.com/' .. x end
 
-return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("L3MON4D3/LuaSnip")
-
-	use("neovim/nvim-lspconfig")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("nvim-lua/plenary.nvim")
-
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "*",
+vim.pack.add({
+    gh("hrsh7th/nvim-cmp"),
+	gh("hrsh7th/cmp-nvim-lsp"),
+	gh("L3MON4D3/LuaSnip"),
+	gh("neovim/nvim-lspconfig"),
+	gh("williamboman/mason.nvim"),
+	gh("williamboman/mason-lspconfig.nvim"),
+	gh("nvim-lua/plenary.nvim"),
+    {
+		src = gh("nvim-telescope/telescope.nvim"),
+		version = "*",
 		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
+	},
+    {
+		src = gh("rose-pine/neovim"),
+		name = "rose-pine",
 		config = function()
 			vim.cmd("colorscheme rose-pine")
 		end,
-	})
-
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-	use("mbbill/undotree")
-	use("github/copilot.vim")
-	use("airblade/vim-gitgutter")
-	use({
-		"akinsho/bufferline.nvim",
-		tag = "*",
+	},
+	gh("nvim-treesitter/nvim-treesitter"),
+	gh("mbbill/undotree"),
+	gh("github/copilot.vim"),
+	gh("airblade/vim-gitgutter"),
+	{
+		src = gh("akinsho/bufferline.nvim"),
+		version = "*",
 		requires = "nvim-tree/nvim-web-devicons",
-	})
-	use("mfussenegger/nvim-dap")
-	use("kylechui/nvim-surround")
-	use("m4xshen/autoclose.nvim")
-	use("terrortylor/nvim-comment")
-	use("stevearc/vim-arduino")
-	use("joeveiga/ng.nvim")
-	use("lewis6991/gitsigns.nvim")
-	use({
-		"ThePrimeagen/harpoon",
+	},
+	gh("mfussenegger/nvim-dap"),
+	gh("kylechui/nvim-surround"),
+	gh("m4xshen/autoclose.nvim"),
+	gh("terrortylor/nvim-comment"),
+	gh("stevearc/vim-arduino"),
+	gh("joeveiga/ng.nvim"),
+	gh("lewis6991/gitsigns.nvim"),
+	{
+		src = gh("ThePrimeagen/harpoon"),
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-	use({
-		"ravitemer/mcphub.nvim",
+	},
+	{
+		src = gh("ravitemer/mcphub.nvim"),
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 		build = "npm install -g mcp-hub@latest",
-	})
-	use({
-		"olimorris/codecompanion.nvim",
+	},
+	{
+		src = gh("olimorris/codecompanion.nvim"),
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"ravitemer/mcphub.nvim",
 		},
-	})
-	use("stevearc/conform.nvim")
-end)
+	},
+	gh("stevearc/conform.nvim")
+})

@@ -8,27 +8,14 @@ vim.pack.add({
 	gh("williamboman/mason.nvim"),
 	gh("williamboman/mason-lspconfig.nvim"),
 	gh("nvim-lua/plenary.nvim"),
-    {
-		src = gh("nvim-telescope/telescope.nvim"),
-		version = "*",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	},
-    {
-		src = gh("rose-pine/neovim"),
-		name = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	},
+    gh("nvim-telescope/telescope.nvim"),
+    gh("rose-pine/neovim"),
 	gh("nvim-treesitter/nvim-treesitter"),
 	gh("mbbill/undotree"),
 	gh("github/copilot.vim"),
 	gh("airblade/vim-gitgutter"),
-	{
-		src = gh("akinsho/bufferline.nvim"),
-		version = "*",
-		requires = "nvim-tree/nvim-web-devicons",
-	},
+    gh("nvim-tree/nvim-web-devicons"),
+    gh("akinsho/bufferline.nvim"),
 	gh("mfussenegger/nvim-dap"),
 	gh("kylechui/nvim-surround"),
 	gh("m4xshen/autoclose.nvim"),
@@ -38,23 +25,9 @@ vim.pack.add({
 	gh("lewis6991/gitsigns.nvim"),
 	{
 		src = gh("ThePrimeagen/harpoon"),
-		branch = "harpoon2",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		branch = "harpoon2"
 	},
-	{
-		src = gh("ravitemer/mcphub.nvim"),
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		build = "npm install -g mcp-hub@latest",
-	},
-	{
-		src = gh("olimorris/codecompanion.nvim"),
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			"ravitemer/mcphub.nvim",
-		},
-	},
+    gh("ravitemer/mcphub.nvim"),
+	gh("olimorris/codecompanion.nvim"),
 	gh("stevearc/conform.nvim")
 })

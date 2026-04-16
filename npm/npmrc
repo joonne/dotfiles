@@ -1,4 +1,4 @@
-npm set prefix=$HOME/.local
+prefix=${HOME}/.local
 save-exact=true
 engine-strict=true
 

@@ -33,19 +33,18 @@ enum custom_keycodes {
 #define MEH_GRV MEH_T(KC_GRV)
 #define LOGOUT C(G(S(A(KC_Z))))
 #define LOCK C(G(KC_Q))
-#define SCRSHOT G(S(C(KC_4)))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_split_3x6_3(
       KC_LBRC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_RBRC,
       KC_MINS,   CTL_A,   ALT_R,   GUI_S,  SFT_TT,    KC_G,                         KC_M,   SFT_N,   GUI_E,   ALT_I,   CTL_O, KC_QUOT,
-      KC_LSPO,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RSPC,
+      SC_LSPO,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, SC_RSPC,
                                           SYM_ESC,MO(NAVI), NUM_TAB,    FNMD_ENT, KC_SPC, MEH_GRV
   ),
 
   [NAVI] = LAYOUT_split_3x6_3(
        LOGOUT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    LOCK,                      KC_AGIN, KC_UNDO, KC_COPY, KC_PSTE,  KC_CUT, XXXXXXX,
-      XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, SCRSHOT,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, KC_CAPS, XXXXXXX,
+      XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_PSCR,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, KC_CAPS, XXXXXXX,
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, XXXXXXX,
                                           XXXXXXX, _______, XXXXXXX,     KC_DEL, KC_BSPC,  KC_GRV
   ),
@@ -65,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [FNMD] = LAYOUT_split_3x6_3(
-        RESET, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      QK_BOOT, XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
       XXXXXXX, XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MPLY, XXXXXXX,
       XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                           KC_VOLD, KC_MPLY, KC_VOLU,    _______, XXXXXXX, XXXXXXX
@@ -83,10 +82,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 };
 
-#ifdef OLED_DRIVER_ENABLE
+#ifdef OLED_ENABLE
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_master) {
+  if (!is_keyboard_master()) {
     return OLED_ROTATION_180;
   }
   return rotation;
@@ -127,12 +126,13 @@ void oled_render_logo(void) {
   oled_write_P(crkbd_logo, false);
 }
 
-void oled_task_user(void) {
-  if (is_master) {
+bool oled_task_user(void) {
+  if (is_keyboard_master()) {
     oled_render_layer_state();
   } else {
     oled_render_logo();
   }
+  return false;
 }
 
-#endif // OLED_DRIVER_ENABLE
+#endif // OLED_ENABLE

@@ -1,5 +1,9 @@
 {
   "env": {},
-  "model": "opus",
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
   "alwaysThinkingEnabled": true
 }
